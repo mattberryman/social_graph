@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Matt Berryman's personal site and writing hub.">
+  <meta property="og:title" content="Matt Berryman">
+  <meta property="og:description" content="Payments guy turned writer. Thinking out loud about trust, friction, and how design choices shape behavior.">
+  <meta property="og:image" content="img/profile@2x.png">
+  <meta property="og:url" content="https://matt.berryman.social">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Matt Berryman">
+  <meta name="twitter:description" content="Payments guy turned writer. Thinking out loud about trust, friction, and how design choices shape behavior.">
+  <meta name="twitter:image" content="img/profile@2x.png">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <title>Matt Berryman</title>
+  <style>
+    :root {
+      --accent-primary: #7E4A73;
+      --accent-secondary: #457B9D;
+      --bg-light: #ffffff;
+      --bg-dark: #1a1a1a;
+      --text-light: #1a1a1a;
+      --text-dark: #f0f0f0;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: var(--bg-dark);
+        color: var(--text-dark);
+      }
+      .link-button {
+        background-color: #333;
+        border-color: var(--accent-primary);
+        color: var(--accent-primary);
+      }
+      .link-button:hover {
+        background-color: var(--accent-primary);
+        color: #fff;
+      }
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 640px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      .profile-pic {
+        width: 96px;
+        height: 96px;
+      }
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--accent-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: underline;
+      color: var(--accent-secondary);
+    }
+
+    .link-button {
+      display: block;
+      width: 100%;
+      padding: 0.5rem 1rem;
+      margin-bottom: 0.75rem;
+      border: 1px solid var(--accent-primary);
+      background-color: #f3f4f6;
+      color: var(--accent-primary);
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .link-button:hover {
+      background-color: var(--accent-primary);
+      color: #fff;
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.875rem;
+      color: #888;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+</head>
+<body itemscope itemtype="https://schema.org/Person">
+  <main>
+    <div class="container">
+      <img src="img/profile@2x.png" alt="Matt Berryman" class="profile-pic" itemprop="image">
+      <h1><span itemprop="givenName">Matt</span> <span itemprop="familyName">Berryman</span></h1>
+      <p itemprop="description">
+        Payments guy turned writer. Thinking out loud about trust, friction, and how design choices shape behavior.
+      </p>
+
+      <div itemscope itemtype="https://schema.org/Blog" itemprop="mainEntityOfPage">
+        <p>
+          I run <a href="https://transactionintelligence.net" itemprop="url">Transaction Intelligence</a> — a no-fluff blog for fintech & ecom teams who want to convert better by building trust, not just adding features.
+        </p>
+      </div>
+
+      <a href="https://www.linkedin.com/in/mattberryman" itemprop="sameAs" class="link-button">LinkedIn</a>
+      <a href="https://transactionintelligence.net" itemprop="sameAs" class="link-button">Transaction Intelligence Blog</a>
+      <a href="https://bsky.app/profile/matt.berryman.social" itemprop="sameAs" class="link-button">Bluesky (personal)</a>
+      <a href="https://bsky.app/profile/txnintel" itemprop="sameAs" class="link-button">Bluesky (txnintel)</a>
+
+      <div class="visually-hidden">
+        <span itemprop="knowsAbout">Payments</span>
+        <span itemprop="knowsAbout">Consumer Psychology</span>
+        <span itemprop="knowsAbout">Conversion Optimization</span>
+        <span itemprop="knowsAbout">Trust Design</span>
+        <div itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <meta itemprop="name" content="United Kingdom">
+        </div>
+      </div>
+
+      <footer>
+        Built with love. Hosted on Cloudflare Pages.
+      </footer>
+    </div>
+  </main>
+</body>
+</html>
