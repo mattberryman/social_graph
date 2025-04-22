@@ -15,136 +15,138 @@
   <link rel="icon" type="image/png" href="img/favicon.png">
   <title>Matt Berryman</title>
   <style>
-    :root {
-      --accent-primary: #7E4A73;
-      --accent-secondary: #457B9D;
-      --bg-light: #ffffff;
-      --bg-dark: #1a1a1a;
-      --text-light: #1a1a1a;
-      --text-dark: #f0f0f0;
-    }
+:root {
+  --accent-primary: #7E4A73;
+  --accent-secondary: #457B9D;
+  --bg-light: #ffffff;
+  --bg-dark: #1a1a1a;
+  --text-light: #1a1a1a;
+  --text-dark: #f0f0f0;
+}
 
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg-light);
-      color: var(--text-light);
-    }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
 
-    @media (prefers-color-scheme: dark) {
-      body {
-        background-color: var(--bg-dark);
-        color: var(--text-dark);
-      }
-      .link-button {
-        background-color: #333;
-      }
-      .link-button:hover {
-        background-color: var(--accent-primary);
-        color: #fff;
-      }
-    }
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+  }
+  .link-button {
+    background-color: #333;
+  }
+  .link-button:hover {
+    background-color: var(--accent-primary);
+    color: #fff;
+  }
+}
 
-    main {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 2rem;
-    }
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
 
-    .container {
-      max-width: 640px;
-      width: 100%;
-      text-align: center;
-    }
+.container {
+  max-width: 640px;
+  width: 100%;
+  text-align: center;
+}
 
-    .portrait {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 1rem;
-    }
+.portrait {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
 
-    @media (max-width: 480px) {
-      .portrait {
-        width: 96px;
-        height: 96px;
-      }
-    }
+@media (max-width: 480px) {
+  .portrait {
+    width: 96px;
+    height: 96px;
+  }
+}
 
-    h1 {
-      font-size: 2rem;
-      font-weight: bold;
-      color: var(--accent-primary);
-      margin-bottom: 0.5rem;
-    }
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--accent-primary);
+  margin-bottom: 0.5rem;
+}
 
-    p {
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-    }
+p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
 
-    a {
-      text-decoration: underline;
-      color: var(--accent-secondary);
-    }
+a {
+  text-decoration: underline;
+  color: var(--accent-secondary);
+}
 
-    .link-button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      max-width: 320px;
-      width: 100%;
-      padding: 0.5rem 1rem;
-      margin: 0 auto 0.75rem auto;
-      border: 1px solid var(--accent-primary);
-      background-color: #f3f4f6;
-      color: var(--accent-primary);
-      text-decoration: none;
-      border-radius: 6px;
-      transition: background-color 0.2s, color 0.2s;
-    }
+.link-button {
+  display: inline-block;
+  width: 100%;
+  max-width: 320px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.75rem;
+  box-sizing: border-box;
+  text-align: center;
+  border: 1px solid var(--accent-primary);
+  background-color: #f3f4f6;
+  color: var(--accent-primary);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.2s, color 0.2s;
+}
 
-    .link-button:hover {
-      background-color: var(--accent-primary);
-      color: #fff;
-    }
+.link-button:hover {
+  background-color: var(--accent-primary);
+  color: #fff;
+}
 
-    footer {
-      margin-top: 3rem;
-      font-size: 0.875rem;
-      color: #888;
-    }
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+footer {
+  margin-top: 3rem;
+  font-size: 0.875rem;
+  color: #888;
+}
   </style>
 </head>
 <body itemscope itemtype="https://schema.org/Person">
   <main>
     <div class="container">
-      <header>
-        <img src="img/profile@2x.png" alt="Portrait of Matt Berryman, payments expert and writer" class="portrait" itemprop="image">
-        <h1><span itemprop="givenName">Matt</span> <span itemprop="familyName">Berryman</span></h1>
-        <link itemprop="url" href="https://matt.berryman.social">
-      </header>
+      <img src="img/profile@2x.png" alt="Portrait of Matt Berryman, payments expert and writer" class="portrait" itemprop="image">
+      <h1><span itemprop="givenName">Matt</span> <span itemprop="familyName">Berryman</span></h1>
 
-      <section class="bio" itemprop="description">
-        <div itemscope itemtype="https://schema.org/Blog" itemprop="mainEntityOfPage">
-          <p>
-            Operates <a href="https://transactionintelligence.net" itemprop="url">Transaction Intelligence</a> where he writes about  
-            <a href="https://transactionintelligence.net/tag/payments/" itemprop="knowsAbout">payments</a>, 
-            <a href="https://transactionintelligence.net/tag/consumer-behaviour/" itemprop="knowsAbout">consumer behaviour</a>, 
-            <a href="https://transactionintelligence.net/tag/banking-tech/" itemprop="knowsAbout">banking tech</a>, 
-            <a href="https://transactionintelligence.net/tag/ai/" itemprop="knowsAbout">AI</a> & 
-            <a href="https://transactionintelligence.net/tag/regulation/" itemprop="knowsAbout">regulation</a>.          
-          </p>
-          <p>A <a href="https://www.strava.com/athletes/5236122" target="_blank" rel="noopener noreferrer">slow cyclist</a>, <a href="https://games.crossfit.com/athlete/2592477" target="_blank" rel="noopener noreferrer">mediocre CrossFit athlete</a>, a father-of-three and dog-walker-in-chief.</p>
-        </div>
-      </section>
+      <div itemscope itemtype="https://schema.org/Blog" itemprop="mainEntityOfPage">
+        <p>
+          Operates <a href="https://transactionintelligence.net" itemprop="url">Transaction Intelligence</a> where he writes about  
+        <a href="https://transactionintelligence.net/tag/payments/" itemprop="knowsAbout">payments</a>, 
+        <a href="https://transactionintelligence.net/tag/consumer-behaviour/" itemprop="knowsAbout">consumer behaviour</a>, 
+        <a href="https://transactionintelligence.net/tag/banking-tech/" itemprop="knowsAbout">banking tech</a>, 
+        <a href="https://transactionintelligence.net/tag/ai/" itemprop="knowsAbout">AI</a> & 
+        <a href="https://transactionintelligence.net/tag/regulation/" itemprop="knowsAbout">regulation</a>.          
+        </p>
+        <p>A <a href="https://www.strava.com/athletes/5236122" target="_blank" rel="noopener noreferrer">slow cyclist</a>, <a href="https://games.crossfit.com/athlete/2592477" target="_blank" rel="noopener noreferrer">mediocre CrossFit athlete</a>, a father-of-three and dog-walker-in-chief.</p>
+      </div>
 
-      <nav class="links" aria-label="Social media links">
+      <nav aria-label="Social media links">
         <a href="https://transactionintelligence.net" itemprop="sameAs" class="link-button" role="button">Transaction Intelligence</a>
         <a href="https://www.linkedin.com/in/mattberryman" itemprop="sameAs" class="link-button" role="button">LinkedIn</a>
         <a href="https://bsky.app/profile/matt.berryman.social" itemprop="sameAs" class="link-button" role="button">Bluesky</a>
@@ -153,9 +155,9 @@
       </nav>
 
       <footer>
-        <p>Made by a pedant, hosted by Cloudflare Pages.<br>
+        Made by a pedant, hosted on Cloudflare.<br>
         <script>document.write('Copyright © ' + new Date().getFullYear() + ' Matt Berryman');</script>
-        <noscript>Copyright © 2025 Matt Berryman</noscript></p>
+        <noscript>Copyright © 2025 Matt Berryman</noscript>
       </footer>
     </div>
   </main>
