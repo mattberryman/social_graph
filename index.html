@@ -93,15 +93,14 @@
       color: var(--accent-secondary);
     }
 
-.link-button {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
+    .link-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       max-width: 320px;
       width: 100%;
-
       padding: 0.5rem 1rem;
-      margin-bottom: 0.75rem;
+      margin: 0 auto 0.75rem auto;
       border: 1px solid var(--accent-primary);
       background-color: #f3f4f6;
       color: var(--accent-primary);
@@ -120,49 +119,43 @@
       font-size: 0.875rem;
       color: #888;
     }
-
-    .visually-hidden {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
   </style>
 </head>
 <body itemscope itemtype="https://schema.org/Person">
   <main>
     <div class="container">
-      <img src="img/profile@2x.png" alt="Portrait of Matt Berryman, payments expert and writer" class="portrait" itemprop="image">
-      <h1><span itemprop="givenName">Matt</span> <span itemprop="familyName">Berryman</span></h1>
+      <header>
+        <img src="img/profile@2x.png" alt="Portrait of Matt Berryman, payments expert and writer" class="portrait" itemprop="image">
+        <h1><span itemprop="givenName">Matt</span> <span itemprop="familyName">Berryman</span></h1>
+        <link itemprop="url" href="https://matt.berryman.social">
+      </header>
 
-      <div itemscope itemtype="https://schema.org/Blog" itemprop="mainEntityOfPage">
-        <p>
-          Operates <a href="https://transactionintelligence.net" itemprop="url">Transaction Intelligence</a> where he writes about  
-        <a href="https://transactionintelligence.net/tag/payments/" itemprop="knowsAbout">payments</a>, 
-        <a href="https://transactionintelligence.net/tag/consumer-behaviour/" itemprop="knowsAbout">consumer behaviour</a>, 
-        <a href="https://transactionintelligence.net/tag/banking-tech/" itemprop="knowsAbout">banking tech</a>, 
-        <a href="https://transactionintelligence.net/tag/ai/" itemprop="knowsAbout">AI</a> & 
-        <a href="https://transactionintelligence.net/tag/regulation/" itemprop="knowsAbout">regulation</a>.          
-        </p>
-        <p>Dad of three, chief dog walker and enjoys <a href="https://www.strava.com/athletes/5236122" target="_blank" rel="noopener noreferrer">cycling</a> and <a href="https://games.crossfit.com/athlete/2592477" target="_blank" rel="noopener noreferrer">CrossFit</a>.</p>
-      <a href="https://transactionintelligence.net" itemprop="sameAs" class="link-button">Transaction Intelligence</a>
-      <a href="https://www.linkedin.com/in/mattberryman" itemprop="sameAs" class="link-button">LinkedIn</a>
-      <a href="https://bsky.app/profile/matt.berryman.social" itemprop="sameAs" class="link-button">Bluesky</a>
-      <a href="https://twitter.com/mattberryman" itemprop="sameAs" class="link-button">Twitter</a>
-      <a href="https://instagram.com/moberryman" itemprop="sameAs" class="link-button">Instagram</a>
+      <section class="bio" itemprop="description">
+        <div itemscope itemtype="https://schema.org/Blog" itemprop="mainEntityOfPage">
+          <p>
+            Operates <a href="https://transactionintelligence.net" itemprop="url">Transaction Intelligence</a> where he writes about  
+            <a href="https://transactionintelligence.net/tag/payments/" itemprop="knowsAbout">payments</a>, 
+            <a href="https://transactionintelligence.net/tag/consumer-behaviour/" itemprop="knowsAbout">consumer behaviour</a>, 
+            <a href="https://transactionintelligence.net/tag/banking-tech/" itemprop="knowsAbout">banking tech</a>, 
+            <a href="https://transactionintelligence.net/tag/ai/" itemprop="knowsAbout">AI</a> & 
+            <a href="https://transactionintelligence.net/tag/regulation/" itemprop="knowsAbout">regulation</a>.          
+          </p>
+          <p>A <a href="https://www.strava.com/athletes/5236122" target="_blank" rel="noopener noreferrer">slow cyclist</a>, <a href="https://games.crossfit.com/athlete/2592477" target="_blank" rel="noopener noreferrer">mediocre CrossFit athlete</a>, a father-of-three and dog-walker-in-chief.</p>
+        </div>
+      </section>
 
-    
-      </div>
+      <nav class="links" aria-label="Social media links">
+        <a href="https://transactionintelligence.net" itemprop="sameAs" class="link-button" role="button">Transaction Intelligence</a>
+        <a href="https://www.linkedin.com/in/mattberryman" itemprop="sameAs" class="link-button" role="button">LinkedIn</a>
+        <a href="https://bsky.app/profile/matt.berryman.social" itemprop="sameAs" class="link-button" role="button">Bluesky</a>
+        <a href="https://twitter.com/mattberryman" itemprop="sameAs" class="link-button" role="button">Twitter</a>
+        <a href="https://instagram.com/moberryman" itemprop="sameAs" class="link-button" role="button">Instagram</a>
+      </nav>
 
       <footer>
-        Built with care. Hosted on Cloudflare Pages.<br>
+        <p>Made by a pedant, hosted by Cloudflare Pages.<br>
         <script>document.write('Copyright © ' + new Date().getFullYear() + ' Matt Berryman');</script>
-        <noscript>Copyright © 2025 Matt Berryman</noscript>
+        <noscript>Copyright © 2025 Matt Berryman</noscript></p>
       </footer>
     </div>
   </main>
