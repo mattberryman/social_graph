@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   build-deploy-badge:
     runs-on: ubuntu-latest
@@ -18,48 +21,54 @@ jobs:
       with:
         node-version: 20
 
-    - name: Install build dependencies
+    - name: Install dependencies
       run: npm install
 
     - name: Run cache-busting script
       run: node cachebust.js
 
     - name: Check for build changes
-      id: changes
+      id: build_changes
       run: |
         git add -A
-        git diff --cached --exit-code || echo "changes=true" >> $GITHUB_ENV
+        git diff --cached --exit-code || echo "BUILD_CHANGED=true" >> $GITHUB_ENV
 
     - name: Commit and push build output
-      if: env.changes == 'true'
+      if: env.BUILD_CHANGED == 'true'
       run: |
         git config user.name github-actions
         git config user.email github-actions@github.com
         git commit -m "📦 build cache-busted output [skip ci]"
-        git push
+        git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }}.git
 
     - name: Deploy to Cloudflare Pages
       uses: cloudflare/pages-action@v1
       with:
         apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        projectName: social-graph
+        projectName: your-project-name
         directory: build
 
-    - name: Install Lighthouse and Badge Generator
+    - name: Install Lighthouse and badge tools
       run: npm install -g lighthouse lighthouse-badges
 
-    - name: Run Lighthouse and Generate Badges
+    - name: Run Lighthouse and generate badges
       run: |
         lighthouse-badges \
-          --url https://matt.berryman.social \
-          --output-path badges
+          --url https://self-assessment.takebackcontrol.me \
+          --output-path badges \
+          --style flat
 
+    - name: Check for badge changes
+      id: badge_changes
+      run: |
+        git add -A
+        git diff --cached --exit-code || echo "BADGES_CHANGED=true" >> $GITHUB_ENV
 
     - name: Commit and push badge updates
+      if: env.BADGES_CHANGED == 'true'
       run: |
         git config user.name github-actions
         git config user.email github-actions@github.com
-        git add badges/
-        git commit -m "📊 update Lighthouse badges [skip ci]" || echo "No badge changes to commit"
-        git push
+        git commit -m "📊 update Lighthouse badges [skip ci]"
+        git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }}.git
