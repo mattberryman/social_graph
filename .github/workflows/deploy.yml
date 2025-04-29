@@ -56,9 +56,8 @@ jobs:
       run: |
         lighthouse-badges \
           --url https://matt.berryman.social \
-          --output-path badges \
-          --style flat
-
+          --output-path badges 
+          
     - name: Check for badge changes
       id: badge_changes
       run: |
