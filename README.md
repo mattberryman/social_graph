@@ -8,7 +8,7 @@ Handcrafted and hosted on Cloudflare Pages to act as graph of social media prese
 
 ### Lighthouse Audit Scores
 
-![Performance](https://raw.githubusercontent.com/mattberryman/social_graph/main/badges/performance.svg)
-![Accessibility](https://raw.githubusercontent.com/mattberryman/social_graph/main/badges/accessibility.svg)
-![Best Practices](https://raw.githubusercontent.com/mattberryman/social_graph/main/badges/best-practices.svg)
-![SEO](https://raw.githubusercontent.com/mattberryman/social_graph/main/badges/seo.svg)
+![Performance](https://raw.githubusercontent.com/mattberryman/social_graph/main/badges/lighthouse_performance.svg)
+![Accessibility](https://raw.githubusercontent.com/mattberryman/social_graph/main/badges/lighthouse_accessibility.svg)
+![Best Practices](https://raw.githubusercontent.com/mattberryman/social_graph/main/badges/lighthouse_best-practices.svg)
+![SEO](https://raw.githubusercontent.com/mattberryman/social_graph/main/badges/lighthouse_seo.svg)
