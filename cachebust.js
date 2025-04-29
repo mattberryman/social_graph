@@ -5,7 +5,7 @@ import { minify as htmlMinify } from 'html-minifier-terser';
 import CleanCSS from 'clean-css';
 import { minify as terserMinify } from 'terser';
 
-const filesToHash = ['styles.css', 'script.js'];
+const filesToHash = ['styles.css'];
 const imageDir = 'img';
 const outputDir = 'build';
 const __dirname = path.resolve();
