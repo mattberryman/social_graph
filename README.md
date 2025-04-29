@@ -3,8 +3,10 @@
 Handcrafted and hosted on Cloudflare Pages to act as graph of social media presence.
 
 ## Deployment Status
-[![Build and Deploy](https://github.com/mattberryman/social_graph/actions/workflows/build.yml/badge.svg)](https://github.com/mattberryman/social_graph/actions/workflows/build.yml)
 
+### Cache-busting & Minification
+
+[![Build, Deploy, and Generate Lighthouse Badges](https://github.com/mattberryman/social_graph/actions/workflows/deploy.yml/badge.svg)](https://github.com/mattberryman/social_graph/actions/workflows/deploy.yml)
 
 ### Lighthouse Audit Scores
 
