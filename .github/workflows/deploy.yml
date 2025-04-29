@@ -46,7 +46,7 @@ jobs:
       with:
         apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        projectName: your-project-name
+        projectName: social-graph
         directory: build
 
     - name: Install Lighthouse and badge tools
@@ -55,7 +55,7 @@ jobs:
     - name: Run Lighthouse and generate badges
       run: |
         lighthouse-badges \
-          --url https://self-assessment.takebackcontrol.me \
+          --url https://matt.berryman.social \
           --output-path badges \
           --style flat
 
