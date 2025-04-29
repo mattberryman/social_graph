@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build": "node cachebust.js"
+    "build": "node cachebust.js",
+    "build-local": "node build-local.js"
   },
   "dependencies": {
     "clean-css": "^5.3.2",

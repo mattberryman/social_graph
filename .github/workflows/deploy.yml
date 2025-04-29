@@ -24,8 +24,26 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    # ensures that each file in the build folder has a unique name to avoid 
+    # older versions being cached
     - name: Run cache-busting script
       run: node cachebust.js
+
+    # calcs a sha384 hash of each file to ensure it's not been tampered with
+    - name: Generate SRI hashes
+      run: node generate-sri.js
+    
+    # and injects these into each HTML file
+    - name: Inject SRI hashes into HTML
+      run: node inject-sri.js
+
+    # abort the process if any of this fails
+    - name: Fail build if SRI warnings occurred
+      if: failure() # Only run if previous step had non-zero exit
+      run: |
+        echo "❌ Build failed: Missing SRI hashes detected."
+        exit 1
+
 
     - name: Check for build changes
       id: build_changes
