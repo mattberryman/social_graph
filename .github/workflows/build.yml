@@ -1,0 +1,46 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+
+    - name: Install dependencies for minification
+      run: npm install
+
+    - name: Run cache-busting script
+      run: node cachebust.js
+
+    - name: Check if there are build changes
+      id: changes
+      run: |
+        git add -A
+        git diff --cached --exit-code || echo "changes=true" >> $GITHUB_ENV
+
+    - name: Commit and push changes
+      if: env.changes == 'true'
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git commit -m "Build cache-busted version [skip ci]"
+        git push
+
+    - name: Deploy to Cloudflare Pages
+      uses: cloudflare/pages-action@v1
+      with:
+        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        projectName: social-graph
+        directory: build
