@@ -51,13 +51,10 @@ jobs:
 
     - name: Run Lighthouse and Generate Badges
       run: |
-        mkdir -p .lighthouseci
-        lighthouse https://self-assessment.takebackcontrol.me \
-          --output json \
-          --output-path .lighthouseci/report.json \
-          --quiet \
-          --chrome-flags="--headless"
-        lighthouse-badges .lighthouseci/report.json badges/
+        lighthouse-badges \
+          --url https://matt.berryman.social \
+          --output-path badges
+
 
     - name: Commit and push badge updates
       run: |
