@@ -1,0 +1,19 @@
+localhost:8000 {
+	root * /Users/matt/Projects/matt.berryman.social/build
+	file_server
+	try_files {path} /index.html
+	
+	# Enable auto-HTTPS
+	tls internal
+	
+	# CORS headers for development
+	header {
+		Access-Control-Allow-Origin *
+		Access-Control-Allow-Methods "GET, POST, OPTIONS"
+		Access-Control-Allow-Headers "Content-Type"
+	}
+	
+	# Serve common file types
+	@assets path *.css *.js *.png *.jpg *.jpeg *.gif *.svg *.ico *.woff *.woff2
+	header @assets Cache-Control "public, max-age=3600"
+}
