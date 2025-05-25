@@ -1,0 +1,26 @@
+# config/Caddyfile.template
+localhost:8000 {
+   root * {{BUILD_DIR}}
+   file_server
+   try_files {path} /index.html
+
+   # Enable auto-HTTPS with self-signed certificates
+   tls internal
+
+   # Development-friendly headers
+   header {
+      Access-Control-Allow-Origin *
+      Access-Control-Allow-Methods "GET, POST, OPTIONS"
+      Access-Control-Allow-Headers "Content-Type"
+   }
+
+   # Cache static assets for 1 hour in development
+   @assets path *.css *.js *.png *.jpg *.jpeg *.gif *.svg *.ico *.woff *.woff2
+   header @assets Cache-Control "public, max-age=3600"
+
+   # Custom logging for development
+   log {
+      output stdout
+      format console
+   }
+}
